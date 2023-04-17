@@ -1,15 +1,18 @@
 <script>
 export default {
     name: "MainCard",
+    props: {
+        carta: Object,
+    }
 }
 </script>
 
 <template>
-    <div class="card" style="width: 18rem;">
-        <img src="https://images.ygoprodeck.com/images/cards_cropped/34541863.jpg" class="card-img-top" alt="">
+    <div class="card">
+        <img :src="carta.card_images[0].image_url" class="card-img-top" alt="">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Alien</p>
+            <h5 class="card-title">{{ carta.name }}</h5>
+            <p class="card-text">{{ carta.archetype }}</p>
         </div>
     </div>
 </template>
@@ -25,9 +28,9 @@ export default {
         padding-bottom: 2em;
 
         h5 {
-            font-size: 2rem;
+            font-size: 1rem;
             text-transform: uppercase;
-            font-weight: 900;
+            font-weight: bolder;
             color: white;
         }
 

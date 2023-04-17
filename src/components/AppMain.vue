@@ -9,7 +9,9 @@ export default {
             store,
         };
     },
-    components: { MainCard }
+    components: {
+        MainCard
+    }
 }
 </script>
 
@@ -18,9 +20,9 @@ export default {
         <div class="container">
             <h2>Carte trovate: 20</h2>
             <ul>
-                <div class="row row-cols-4">
-                    <div class="col">
-                        <MainCard />
+                <div class="row row-cols-5 g-4">
+                    <div class="col" v-for="carta in store.carte" :key="carta.id">
+                        <MainCard :carta="carta" />
                     </div>
                 </div>
             </ul>
