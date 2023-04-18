@@ -20,6 +20,7 @@ export default {
         <div class="container">
             <h2>Carte trovate: 20</h2>
             <ul>
+                <h2 class="loading" v-if="store.loading">Loading...</h2>
                 <div class="row row-cols-5 g-4">
                     <div class="col" v-for="carta in store.carte" :key="carta.id">
                         <MainCard :carta="carta" />
@@ -46,6 +47,10 @@ main {
             color: white;
             font-size: 0.8rem;
             padding: 1em;
+        }
+
+        .loading {
+            background-color: cadetblue;
         }
 
         ul {
