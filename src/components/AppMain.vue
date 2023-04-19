@@ -18,7 +18,7 @@ export default {
 <template>
     <main>
         <div class="container">
-            <h2>Carte trovate: 20</h2>
+            <h2>Carte trovate: {{ store.carte.length }}</h2>
             <ul>
                 <h2 class="loading" v-if="store.loading">Loading...</h2>
                 <div class="row row-cols-5 g-4">

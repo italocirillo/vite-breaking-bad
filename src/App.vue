@@ -22,11 +22,14 @@ export default {
   methods: {
     stampaCarte() {
       this.store.loading = true;
-      const params = {};
+      const params = {
+        num: 100,
+        offset: 0,
+      };
       if (this.store.tipoSelezionato) {
         params.archetype = this.store.tipoSelezionato;
       }
-      axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0", {
+      axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php", {
         params
       }).then((resp) => {
         this.store.carte = resp.data.data;

@@ -18,7 +18,7 @@ export default {
         <div class="container">
             <select class="form-select" name="tipo" id="tipo" v-model="store.tipoSelezionato" @change="$emit('filter')">
                 <option value="">Tutti</option>
-                <option :value="tipo" v-for="tipo in tipi">{{ tipo }}</option>
+                <option :value="tipo" v-for="tipo, index in tipi" :key="index">{{ tipo }}</option>
             </select>
         </div>
     </div>
